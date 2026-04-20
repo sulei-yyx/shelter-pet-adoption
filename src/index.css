@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-surface: #fbf9f8;
+  --color-surface-container-low: #f5f3f3;
+  --color-surface-container-high: #e9e8e7;
+  --color-surface-container-highest: #e4e2e2;
+  --color-surface-container-lowest: #ffffff;
+  
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #564339;
+  
+  --color-primary: #9b4500;
+  --color-primary-container: #ff914d;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary: #006a62;
+  --color-secondary-container: #81f3e5;
+  --color-on-secondary-container: #006f66;
+  
+  --color-tertiary: #7c5716;
+  --color-tertiary-container: #d5a65e;
+  --color-on-tertiary-container: #5a3b00;
+  
+  --color-outline: #897267;
+  --color-outline-variant: #dcc1b4;
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/70 backdrop-blur-3xl;
+  }
+  
+  .signature-gradient {
+    @apply bg-gradient-to-br from-primary to-primary-container;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
